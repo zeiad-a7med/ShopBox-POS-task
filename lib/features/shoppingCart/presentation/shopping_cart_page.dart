@@ -12,17 +12,20 @@ class ShoppingCartPageState extends State<ShoppingCartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios,color: Colors.white,size: 30,),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white, size: 30),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: SizedBox(
-          width: 150.w,
-          child: Image.asset('assets/images/app_logo.png'),
+        title: Text(
+          'Shopping Cart',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 23.sp,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         backgroundColor: const Color.fromARGB(255, 71, 156, 118),
       ),

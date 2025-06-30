@@ -178,7 +178,6 @@ class ProductPricingWidget extends StatelessWidget {
                 ),
               ),
             ),
-          const Spacer(),
           Text('${price.toStringAsFixed(0)} EGP')
           ],
         ),
