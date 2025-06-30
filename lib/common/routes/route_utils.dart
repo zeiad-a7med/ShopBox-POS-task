@@ -5,7 +5,7 @@ import 'package:shopbox_pos/common/routes/route_strings.dart';
 import 'package:shopbox_pos/common/routes/router_provider.dart';
 
 class RouteUtils {
-  static void goToOnShoppingCart() {
-    appContext.goNamed(RouteStrings.shoppingCart);
+  static void goToShoppingCart() {
+    appContext.pushNamed(RouteStrings.shoppingCart);
   }
 }
