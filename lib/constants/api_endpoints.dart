@@ -1,4 +1,4 @@
 class ApiEndPoints {
   static String baseUrl = 'https://dummyjson.com';
-  static String products = '/products';
+  static String products = '$baseUrl/products';
 }

@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopbox_pos/common/routes/route_strings.dart';
 import 'package:shopbox_pos/features/products/presentation/products_page.dart';
+import 'package:shopbox_pos/features/shoppingCart/presentation/shopping_cart_page.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -23,6 +24,13 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: RouteStrings.initial,
         builder: (BuildContext context, GoRouterState state) {
           return ProductsPage();
+        },
+      ),
+      GoRoute(
+        name: RouteStrings.shoppingCart,
+        path: RouteStrings.shoppingCart,
+        builder: (BuildContext context, GoRouterState state) {
+          return ShoppingCartPage();
         },
       ),
     ],
