@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopbox_pos/common/routes/route_utils.dart';
 import 'package:shopbox_pos/features/products/presentation/controller/products_page_controller.dart';
 import 'package:shopbox_pos/features/products/presentation/widgets/product_card.dart';
+import 'package:shopbox_pos/features/shoppingCart/domain/models/cart/cart.dart';
+import 'package:shopbox_pos/features/shoppingCart/presentation/controller/cart_controller.dart';
 
 class ProductsPage extends ConsumerStatefulWidget {
   const ProductsPage({super.key});
@@ -58,10 +60,15 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
                       minWidth: 20,
                       minHeight: 20,
                     ),
-                    child: Text(
-                      '3', // Replace with cart count from your provider
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
-                      textAlign: TextAlign.center,
+                    child: Consumer(
+                      builder: (context, ref, _) {
+                        final cartState = ref.watch(cartControllerProvider);
+                        return Text(
+                          (cartState.value?.totalItems ?? 0).toString(),
+                          style: const TextStyle(color: Colors.white, fontSize: 12),
+                          textAlign: TextAlign.center,
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -132,7 +139,7 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: 0.5,
+                          childAspectRatio: 0.45,
                           crossAxisSpacing: 12,
                           mainAxisSpacing: 12,
                         ),
