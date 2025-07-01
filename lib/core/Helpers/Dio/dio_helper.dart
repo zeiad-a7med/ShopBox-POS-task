@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:shopbox_pos/constants/api_endpoints.dart';
+import 'package:shopbox_pos/core/constants/api_endpoints.dart';
 
 class DioHelper {
   static late Dio _dio;

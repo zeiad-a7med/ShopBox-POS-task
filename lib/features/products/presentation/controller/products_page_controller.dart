@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:shopbox_pos/constants/app_settings.dart';
+import 'package:shopbox_pos/core/constants/app_settings.dart';
 import 'package:shopbox_pos/features/products/domain/models/productsResponse/products_response.dart';
 import 'package:shopbox_pos/features/products/domain/usecases/products/get_products_usecase.dart';
 import 'package:shopbox_pos/features/products/presentation/controller/products_page_state.dart';

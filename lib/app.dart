@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shopbox_pos/common/routes/router_provider.dart';
+import 'package:shopbox_pos/core/routes/router_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopbox_pos/constants/app_settings.dart';
+import 'package:shopbox_pos/core/constants/app_settings.dart';
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});

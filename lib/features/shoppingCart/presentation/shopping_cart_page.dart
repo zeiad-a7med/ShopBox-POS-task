@@ -258,16 +258,9 @@ class ShoppingCartPageState extends ConsumerState<ShoppingCartPage> {
                           SizedBox(width: 12.w),
                           Expanded(
                             child: ElevatedButton(
-                              onPressed: () {
-                                // TODO: Implement checkout
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                      'Checkout functionality coming soon!',
-                                    ),
-                                    backgroundColor: Colors.blue,
-                                  ),
-                                );
+                              onPressed: () async {
+                                // Show payment method selection sheet
+                                controller.requestPayment();
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color.fromARGB(
@@ -296,36 +289,6 @@ class ShoppingCartPageState extends ConsumerState<ShoppingCartPage> {
               ],
             );
           }
-          // return cartAsync.when(
-          //   loading: () => const Center(child: CircularProgressIndicator()),
-          //   error: (error, stack) => Center(
-          //     child: Column(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: [
-          //         Icon(Icons.error, size: 60, color: Colors.red[400]),
-          //         SizedBox(height: 16.h),
-          //         Text(
-          //           'Error loading cart',
-          //           style: TextStyle(
-          //             fontSize: 18.sp,
-          //             fontWeight: FontWeight.w500,
-          //             color: Colors.red[600],
-          //           ),
-          //         ),
-          //         SizedBox(height: 8.h),
-          //         Text(
-          //           error.toString(),
-          //           style: TextStyle(fontSize: 14.sp, color: Colors.grey[600]),
-          //           textAlign: TextAlign.center,
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          //   data: (cart) {
-          //     if (cart.items.isEmpty) {}
-
-          //   },
-          // );
         },
       ),
     );
