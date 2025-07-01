@@ -114,7 +114,26 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
                   ],
                 ),
               );
-            } else if (state.requireValue.products.isEmpty) {
+            }else if (state.requireValue.connectedToNetwork == false) {
+              return Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.network_check,
+                      size: 80,
+                      color: Colors.grey,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Check your internet connection',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ],
+                ),
+              );
+            }
+             else if (state.requireValue.products.isEmpty) {
               return Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
