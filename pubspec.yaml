@@ -56,6 +56,8 @@ dev_dependencies:
   top_snackbar_flutter: ^3.1.0
   shared_preferences: ^2.5.3
   fluttertoast: ^8.2.12
+  mockito: ^5.4.4
+
 
   # The following adds the launcher icon support to your application.
   # run below mentioned commands to generate launcher icons

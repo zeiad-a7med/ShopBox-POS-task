@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:shopbox_pos/core/constants/api_endpoints.dart';
 
 class DioHelper {
-  static late Dio _dio;
+  static late Dio dio;
 
   static init() {
     BaseOptions options = BaseOptions(
@@ -16,16 +16,16 @@ class DioHelper {
       },
     );
 
-    _dio = Dio(options);
+    dio = Dio(options);
   }
 
   static void setToken(String token) {
-    _dio.options.headers['Authorization'] = 'Bearer $token';
+    dio.options.headers['Authorization'] = 'Bearer $token';
   }
 
   static Future<Response> get(String url, {Map<String, dynamic>? query}) async {
     try {
-      return await _dio.get(url, queryParameters: query);
+      return await dio.get(url, queryParameters: query);
     } catch (e) {
       return _handleError(e);
     }
@@ -37,7 +37,7 @@ class DioHelper {
     Map<String, dynamic>? query,
   }) async {
     try {
-      return await _dio.post(url, data: data, queryParameters: query);
+      return await dio.post(url, data: data, queryParameters: query);
     } catch (e) {
       return _handleError(e);
     }
@@ -49,7 +49,7 @@ class DioHelper {
     Map<String, dynamic>? query,
   }) async {
     try {
-      return await _dio.put(url, data: data, queryParameters: query);
+      return await dio.put(url, data: data, queryParameters: query);
     } catch (e) {
       return _handleError(e);
     }
@@ -61,7 +61,7 @@ class DioHelper {
     Map<String, dynamic>? query,
   }) async {
     try {
-      return await _dio.delete(url, data: data, queryParameters: query);
+      return await dio.delete(url, data: data, queryParameters: query);
     } catch (e) {
       return _handleError(e);
     }
