@@ -9,6 +9,7 @@ abstract class ProductsPageState with _$ProductsPageState {
     required final List<Product> products,
     required final bool isPaginating,
     required final bool hasMoreProducts,
+    required final bool connectedToNetwork,
     required final int limit,
     required final int skip,
     required final int total,

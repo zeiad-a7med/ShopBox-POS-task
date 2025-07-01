@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductsPageState {
 
- List<Product> get products; bool get isPaginating; bool get hasMoreProducts; int get limit; int get skip; int get total;
+ List<Product> get products; bool get isPaginating; bool get hasMoreProducts; bool get connectedToNetwork; int get limit; int get skip; int get total;
 /// Create a copy of ProductsPageState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +26,16 @@ $ProductsPageStateCopyWith<ProductsPageState> get copyWith => _$ProductsPageStat
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductsPageState&&const DeepCollectionEquality().equals(other.products, products)&&(identical(other.isPaginating, isPaginating) || other.isPaginating == isPaginating)&&(identical(other.hasMoreProducts, hasMoreProducts) || other.hasMoreProducts == hasMoreProducts)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.total, total) || other.total == total));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductsPageState&&const DeepCollectionEquality().equals(other.products, products)&&(identical(other.isPaginating, isPaginating) || other.isPaginating == isPaginating)&&(identical(other.hasMoreProducts, hasMoreProducts) || other.hasMoreProducts == hasMoreProducts)&&(identical(other.connectedToNetwork, connectedToNetwork) || other.connectedToNetwork == connectedToNetwork)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.total, total) || other.total == total));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(products),isPaginating,hasMoreProducts,limit,skip,total);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(products),isPaginating,hasMoreProducts,connectedToNetwork,limit,skip,total);
 
 @override
 String toString() {
-  return 'ProductsPageState(products: $products, isPaginating: $isPaginating, hasMoreProducts: $hasMoreProducts, limit: $limit, skip: $skip, total: $total)';
+  return 'ProductsPageState(products: $products, isPaginating: $isPaginating, hasMoreProducts: $hasMoreProducts, connectedToNetwork: $connectedToNetwork, limit: $limit, skip: $skip, total: $total)';
 }
 
 
@@ -46,7 +46,7 @@ abstract mixin class $ProductsPageStateCopyWith<$Res>  {
   factory $ProductsPageStateCopyWith(ProductsPageState value, $Res Function(ProductsPageState) _then) = _$ProductsPageStateCopyWithImpl;
 @useResult
 $Res call({
- List<Product> products, bool isPaginating, bool hasMoreProducts, int limit, int skip, int total
+ List<Product> products, bool isPaginating, bool hasMoreProducts, bool connectedToNetwork, int limit, int skip, int total
 });
 
 
@@ -63,11 +63,12 @@ class _$ProductsPageStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductsPageState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? products = null,Object? isPaginating = null,Object? hasMoreProducts = null,Object? limit = null,Object? skip = null,Object? total = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? products = null,Object? isPaginating = null,Object? hasMoreProducts = null,Object? connectedToNetwork = null,Object? limit = null,Object? skip = null,Object? total = null,}) {
   return _then(_self.copyWith(
 products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
 as List<Product>,isPaginating: null == isPaginating ? _self.isPaginating : isPaginating // ignore: cast_nullable_to_non_nullable
 as bool,hasMoreProducts: null == hasMoreProducts ? _self.hasMoreProducts : hasMoreProducts // ignore: cast_nullable_to_non_nullable
+as bool,connectedToNetwork: null == connectedToNetwork ? _self.connectedToNetwork : connectedToNetwork // ignore: cast_nullable_to_non_nullable
 as bool,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int,skip: null == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
 as int,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
@@ -82,7 +83,7 @@ as int,
 
 
 class _ProductsPageState implements ProductsPageState {
-  const _ProductsPageState({required final  List<Product> products, required this.isPaginating, required this.hasMoreProducts, required this.limit, required this.skip, required this.total}): _products = products;
+  const _ProductsPageState({required final  List<Product> products, required this.isPaginating, required this.hasMoreProducts, required this.connectedToNetwork, required this.limit, required this.skip, required this.total}): _products = products;
   
 
  final  List<Product> _products;
@@ -94,6 +95,7 @@ class _ProductsPageState implements ProductsPageState {
 
 @override final  bool isPaginating;
 @override final  bool hasMoreProducts;
+@override final  bool connectedToNetwork;
 @override final  int limit;
 @override final  int skip;
 @override final  int total;
@@ -108,16 +110,16 @@ _$ProductsPageStateCopyWith<_ProductsPageState> get copyWith => __$ProductsPageS
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductsPageState&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.isPaginating, isPaginating) || other.isPaginating == isPaginating)&&(identical(other.hasMoreProducts, hasMoreProducts) || other.hasMoreProducts == hasMoreProducts)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.total, total) || other.total == total));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductsPageState&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.isPaginating, isPaginating) || other.isPaginating == isPaginating)&&(identical(other.hasMoreProducts, hasMoreProducts) || other.hasMoreProducts == hasMoreProducts)&&(identical(other.connectedToNetwork, connectedToNetwork) || other.connectedToNetwork == connectedToNetwork)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.total, total) || other.total == total));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_products),isPaginating,hasMoreProducts,limit,skip,total);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_products),isPaginating,hasMoreProducts,connectedToNetwork,limit,skip,total);
 
 @override
 String toString() {
-  return 'ProductsPageState(products: $products, isPaginating: $isPaginating, hasMoreProducts: $hasMoreProducts, limit: $limit, skip: $skip, total: $total)';
+  return 'ProductsPageState(products: $products, isPaginating: $isPaginating, hasMoreProducts: $hasMoreProducts, connectedToNetwork: $connectedToNetwork, limit: $limit, skip: $skip, total: $total)';
 }
 
 
@@ -128,7 +130,7 @@ abstract mixin class _$ProductsPageStateCopyWith<$Res> implements $ProductsPageS
   factory _$ProductsPageStateCopyWith(_ProductsPageState value, $Res Function(_ProductsPageState) _then) = __$ProductsPageStateCopyWithImpl;
 @override @useResult
 $Res call({
- List<Product> products, bool isPaginating, bool hasMoreProducts, int limit, int skip, int total
+ List<Product> products, bool isPaginating, bool hasMoreProducts, bool connectedToNetwork, int limit, int skip, int total
 });
 
 
@@ -145,11 +147,12 @@ class __$ProductsPageStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductsPageState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? products = null,Object? isPaginating = null,Object? hasMoreProducts = null,Object? limit = null,Object? skip = null,Object? total = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? products = null,Object? isPaginating = null,Object? hasMoreProducts = null,Object? connectedToNetwork = null,Object? limit = null,Object? skip = null,Object? total = null,}) {
   return _then(_ProductsPageState(
 products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
 as List<Product>,isPaginating: null == isPaginating ? _self.isPaginating : isPaginating // ignore: cast_nullable_to_non_nullable
 as bool,hasMoreProducts: null == hasMoreProducts ? _self.hasMoreProducts : hasMoreProducts // ignore: cast_nullable_to_non_nullable
+as bool,connectedToNetwork: null == connectedToNetwork ? _self.connectedToNetwork : connectedToNetwork // ignore: cast_nullable_to_non_nullable
 as bool,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int,skip: null == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
 as int,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
