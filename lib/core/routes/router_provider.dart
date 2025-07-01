@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopbox_pos/common/routes/route_strings.dart';
+import 'package:shopbox_pos/core/routes/route_strings.dart';
 import 'package:shopbox_pos/features/products/presentation/products_page.dart';
 import 'package:shopbox_pos/features/shoppingCart/presentation/shopping_cart_page.dart';
 

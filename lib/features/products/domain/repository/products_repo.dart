@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:shopbox_pos/Helpers/Dio/dio_helper.dart';
-import 'package:shopbox_pos/Helpers/Dio/errors.dart';
-import 'package:shopbox_pos/constants/api_endpoints.dart';
+import 'package:shopbox_pos/core/Helpers/Dio/dio_helper.dart';
+import 'package:shopbox_pos/core/Helpers/Dio/errors.dart';
+import 'package:shopbox_pos/core/constants/api_endpoints.dart';
 import 'package:shopbox_pos/features/products/domain/models/productsResponse/products_response.dart';
 import 'package:shopbox_pos/features/products/domain/repository/products_repo_i.dart';
 

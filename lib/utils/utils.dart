@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Utils {
   static void handlePagination({
@@ -36,4 +37,41 @@ class Utils {
       }
     });
   }
+  static Future<bool?> showConfirmationDialog({
+    required BuildContext context,
+    required String title,
+    required String content,
+    String confirmText = 'Confirm',
+    String cancelText = 'Cancel',
+  }) {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.white,
+        title: Text(title),
+        content: Text(content),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(cancelText),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(confirmText),
+          ),
+        ],
+      ),
+    );
+  }
+   static Future<bool?> showToast(String text,
+          {Color? backgroundColor, int? timeInSec, Color? textColor}) =>
+      Fluttertoast.showToast(
+          msg: text,
+          toastLength: Toast.LENGTH_SHORT,
+          textColor: textColor,
+          //Not working Android
+          gravity: ToastGravity.CENTER,
+          backgroundColor: backgroundColor ?? Colors.black,
+          timeInSecForIosWeb: timeInSec ?? 3,
+          fontSize: 18.0);
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopbox_pos/common/routes/route_utils.dart';
+import 'package:shopbox_pos/core/routes/route_utils.dart';
 import 'package:shopbox_pos/features/products/presentation/controller/products_page_controller.dart';
+import 'package:shopbox_pos/features/products/presentation/widgets/custom_loading.dart';
 import 'package:shopbox_pos/features/products/presentation/widgets/product_card.dart';
 import 'package:shopbox_pos/features/shoppingCart/domain/models/cart/cart.dart';
 import 'package:shopbox_pos/features/shoppingCart/presentation/controller/cart_controller.dart';
@@ -65,7 +66,10 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
                         final cartState = ref.watch(cartControllerProvider);
                         return Text(
                           (cartState.value?.totalItems ?? 0).toString(),
-                          style: const TextStyle(color: Colors.white, fontSize: 12),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                          ),
                           textAlign: TextAlign.center,
                         );
                       },
@@ -85,7 +89,7 @@ class _ProductsPageState extends ConsumerState<ProductsPage> {
         child: Consumer(
           builder: (context, ref, _) {
             if (state.isLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return const Center(child: CustomLoadingWidget());
             } else if (state.hasError) {
               return Center(
                 child: Column(
