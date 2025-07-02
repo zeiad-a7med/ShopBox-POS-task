@@ -4,7 +4,7 @@ A modern Point of Sale (POS) Flutter application built with clean architecture a
 
 ## 📱 Features
 
-- **Product Management**: Browse and search products with a responsive grid layout
+- **Product Management**: Browse products with a responsive grid layout
 - **Shopping Cart**: Add, remove, and modify items in the cart
 - **Combo Offers**: Automatic combo detection and application
 - **Payment Processing**: Multiple payment methods (Cash, Card, Voucher)
